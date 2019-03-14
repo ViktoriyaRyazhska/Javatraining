@@ -1,6 +1,7 @@
 package com.romanbaida.hw3;
 
 import java.time.Year;
+import java.util.Scanner;
 
 public class Person {
 
@@ -24,7 +25,8 @@ public class Person {
   }
 
   public Person(String name, int birthYear) {
-    input(name, birthYear);
+    this.name = name;
+    this.birthYear = birthYear;
   }
 
   @Override
@@ -36,9 +38,13 @@ public class Person {
     return Year.now().getValue() - birthYear;
   }
 
-  public void input(String name, int birthYear) {
-    this.name = name;
-    this.birthYear = birthYear;
+  public void input() {
+    Scanner scanner = new Scanner(System.in);
+
+    System.out.print("Input person name: ");
+    name = scanner.nextLine();
+    System.out.print("Input person birth year: ");
+    birthYear = scanner.nextInt();
   }
 
   public void output() {
