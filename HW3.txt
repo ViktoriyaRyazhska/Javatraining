@@ -1,0 +1,100 @@
+import java.util.Scanner;
+
+public class Class3 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		Person p1 = new Person("p1", 1991);
+		System.out.println(p1);
+		p1.input(sc);
+		System.out.println(p1);
+		
+		Person p2 = new Person("p2", 1992);
+		System.out.println(p2);
+		p2.input(sc);
+		System.out.println(p2);
+		
+		Person p3 = new Person("p3", 1993);
+		System.out.println(p3);
+		p3.input(sc);
+		System.out.println(p3);
+		
+		Person p4 = new Person("p4", 1994);
+		System.out.println(p4);
+		p4.input(sc);
+		System.out.println(p4);
+	   
+		Person p5 = new Person("p5", 1995);
+		System.out.println(p5);
+	    p5.input(sc);
+	    System.out.println(p5);
+		
+	
+	}
+}
+
+
+import java.time.LocalDate;
+import java.time.Year;
+import java.util.Scanner;
+
+public class Person {
+	
+	private String name;
+	private int birthYear;
+	//private static int age;
+	private String newName;
+	
+	public void input(Scanner sc) {
+		System.out.println("Enter person's name");
+		name = sc.next();
+	}
+	
+	public Person(String name, int birthYear) {
+		this.name = name;
+		this.birthYear = birthYear;
+		//age = 2019 - birthYear;
+	}
+	public Person(String name) {
+		this.name = name;
+	}
+	public Person() {
+	}
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getBirthYear() {
+		return birthYear;
+	}
+	public void setBirthYear(int birthYear) {
+		this.birthYear = birthYear;
+	}
+	@Override
+	public String toString() {
+		return "name: " + name + " age: " + getAge();
+	}
+	
+	public int getAge() {
+		return LocalDate.now().getYear() - birthYear;
+		//return age;
+	}
+	
+	public Person(String name, String newName) {
+		this.newName = newName;
+	}
+	public String getNewName() {
+	return newName;
+	}
+	public void replaceName(String newName ) {
+		this.name = newName;
+		
+		
+	}
+	
+	
+}
