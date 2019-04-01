@@ -30,3 +30,7 @@ hs_err_pid*
 # Intellij IDEA
 .idea
 *.iml
+
+# MacOS
+.DS_Store
+/bin/
