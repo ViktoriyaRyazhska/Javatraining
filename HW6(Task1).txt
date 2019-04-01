@@ -1,0 +1,130 @@
+ublic class BirdClass {
+	public static void main(String[] args) {
+		
+		Bird[] b = new Bird[4];
+		b[0] = new Eagle("Eagle has feathers", " layEggs");
+	
+		b[1] = new Swallow("Swallow has feathers", " layEggs");
+		b[2] = new Penguin("Penguin has feathers", " layEggs");
+		b[3] = new Chicken("Chicken has feathers", " layEggs");
+		
+		
+		for (int i = 0; i < b.length; i++) {
+			System.out.println(b[i]);
+		System.out.println("can fly:" + b[i].fly());
+	}
+
+}
+}
+
+public abstract class Bird {
+	private String feather;
+	private String layEggs;
+
+  public Bird(String feather, String layEggs) {
+		
+		this.feather = feather;
+		this.layEggs = layEggs;
+	}
+
+
+	public String getFeather() {
+		return feather;
+	}
+
+   public void setFeather(String feather) {
+		this.feather = feather;
+	}
+
+
+     public String getLayEggs() {
+		return layEggs;
+	}
+
+    public void setLayEggs(String layEggs) {
+		this.layEggs = layEggs;
+	}
+    
+    @Override
+	public String toString() {
+		return feather + layEggs + fly();
+    }
+     public abstract boolean fly();
+}
+
+
+public class FlyingBird extends Bird {
+
+	
+		
+	
+
+	public FlyingBird(String feather, String layEggs) {
+		super(feather, layEggs);
+		
+	}
+
+	@Override
+	public boolean fly() {
+
+		return true;
+	}
+
+}
+
+public class NotFlyingBird extends Bird {
+
+	public NotFlyingBird(String feather, String layEggs) {
+		super(feather, layEggs);
+		
+	}
+
+	@Override
+	public boolean fly() {
+	   return false;
+	}
+
+}
+
+public class Eagle extends FlyingBird {
+
+	public Eagle(String feather, String layEggs) {
+		super(feather, layEggs);
+		
+	}
+ 
+	
+}
+
+public class Swallow extends FlyingBird {
+
+	public Swallow(String feather, String layEggs) {
+		super(feather, layEggs);
+		
+	}
+
+}
+
+
+public class Penguin extends NotFlyingBird {
+
+	
+
+	public Penguin(String feather, String layEggs) {
+		super(feather, layEggs);
+		
+	}
+	
+
+	}
+
+public class Chicken extends NotFlyingBird {
+
+	public Chicken(String feather, String layEggs) {
+		super(feather, layEggs);
+		
+	}
+	
+}
+
+
