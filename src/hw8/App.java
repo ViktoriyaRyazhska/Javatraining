@@ -1,6 +1,5 @@
 package hw8;
 
-import java.util.Arrays;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -51,7 +50,7 @@ public class App {
   public static void third() {
     Scanner scanner = new Scanner(System.in);
     String[] words = scanner.nextLine().trim().split("\\s+");
-    Pattern p = Pattern.compile("\\$\\d+(\\.\\d{1,2})?");
+    Pattern p = Pattern.compile("\\$(0\\.\\d{1,2}|[1-9]\\d*(\\.\\d{1,2})?)");
     Matcher m;
 
     for (String word : words) {
