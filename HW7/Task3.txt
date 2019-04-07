@@ -1,0 +1,104 @@
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class StudentMain {
+	
+public static void main(String[] args) {
+			Set<Student> set = new TreeSet<Student>(Student.getNameComparator());
+			
+			set.add(new Student(5, "Student4 "));
+			set.add(new Student(2, "Student2 "));
+			set.add(new Student(3, "Student5 "));
+			set.add(new Student(4, "Student3 "));
+			set.add(new Student(1, "Student1 "));
+			
+			System.out.println(set);
+			Set<Student> set1 = new TreeSet(Student.getCourseComparator());
+			set1.addAll(set);
+			System.out.println(set1);
+			
+			Iterator<Student> iterator = set.iterator();
+			while(iterator.hasNext()) {
+			System.out.println(iterator.next());
+			}
+		}
+}
+
+
+import java.awt.List;
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.Set;
+
+
+public class Student implements Comparable<Student> {
+	   private static NameComparator nameComparator = new NameComparator();
+	   private static CourseComparator courseComparator = new CourseComparator();
+	
+	private int courseNumber;
+	private String name;
+   
+   
+   
+   
+   public Student(int courseNumber, String name) {
+    this.name = name;
+	this.courseNumber = courseNumber;
+}
+
+   public Student() {
+   }
+   
+   public int getCourseNumber() {
+	    return courseNumber;
+}
+    public void setCourseNumber(int courseNumber) {
+	    this.courseNumber = courseNumber;
+}
+   
+     public String getName() {
+	  return name;
+}
+     public void setName(String name) {
+	    this.name = name;
+}
+    
+   
+   public static Comparator getNameComparator() {
+	   return nameComparator;
+	  
+   }
+   
+   public static Comparator getCourseComparator() {
+	   return courseComparator;
+	  
+   }
+    
+           public String toString() {
+        	   return name + courseNumber;
+           }
+           
+
+           
+           static class NameComparator implements Comparator {
+        	   public int compare(Object o1, Object o2) {
+        		   return ((Student) o1).getName().compareTo(((Student) o2).getName());
+        	   }
+           }
+           static class CourseComparator implements Comparator {
+        	   public int compare(Object o1, Object o2) {
+        		   return ((Student) o1).getCourseNumber() - (((Student) o2).getCourseNumber());
+}
+}
+		@Override
+		public int compareTo(Student o) {
+		
+			return 0;
+		}
+		
+		}
+		
+

@@ -1,0 +1,51 @@
+import java.util.HashMap;
+
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
+
+public class Task2 {
+
+	 public static void main(String[] args) {
+		 
+         
+	        Map<String, String> personMap = new TreeMap<String, String>();
+	        personMap.put("LastName1", "FirstName1");
+	        personMap.put("LastName2", "FirstName2");
+	        personMap.put("LastName3", "FirstName3");
+	        personMap.put("LastName4", "FirstName4");
+	        personMap.put("LastName5", "Orest");
+	        personMap.put("LastName6", "FirstName6");
+	        personMap.put("LastName7", "FirstName1");
+	        personMap.put("LastName8", "FirstName8");
+	        personMap.put("LastName9", "FirstName9");
+	        personMap.put("LastName10", "FirstName10");
+	        
+	        Set<String> keys = personMap.keySet();
+	        
+	        for(String key : keys) {
+	        	System.out.println(key + " " + personMap.get(key));
+	        }
+	        System.out.println("After removing");
+	         personMap.values().remove("Orest");
+	        for(String key : keys) {
+	      
+	        	System.out.println(key + " " + personMap.get(key));
+	        }
+	       
+	        
+	        String[] values = personMap.values().toArray(new String[personMap.size()]);
+	        for (int i = 0; i < values.length; i++) {
+	          for (int j = i+1; j<values.length; j++) {
+	            if (values[i].equals(values[j])) {
+	            	 System.out.println();
+	            	System.out.println(("The same first name: " + values[j]));
+	            }
+	            	
+	            }
+	        }
+	 }
+
+	
+}
+
